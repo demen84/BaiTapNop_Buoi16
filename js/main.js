@@ -1,4 +1,4 @@
-//1. Thêm phần tử số vào mảng
+//0. Thêm phần tử số vào mảng
 let arrNumbers = [];
 document.getElementById('themPhanTuVaoMang').onclick = function () {
     let number = document.getElementById('txtNumber').value * 1;
@@ -6,7 +6,7 @@ document.getElementById('themPhanTuVaoMang').onclick = function () {
     document.getElementById('kqMang').innerHTML = arrNumbers;
     document.getElementById('kqMang').classList.add('styleKQ');
 
-    console.log(arrNumbers);
+    // console.log(arrNumbers);
 }
 
 //1. Tính tổng các số dương trong mảng arrNumbers
@@ -178,27 +178,72 @@ document.getElementById('btnSoNguyenToDauTien').onclick = function () {
     document.getElementById('kqSoNguyenToDauTien').classList.add('styleKQ');
 }
 
+//9. Đếm số nguyên trong mảng
+
+let giaTriSo = [];
+document.getElementById('themSo').onclick = function () {
+    let number = document.getElementById('nhapSo').value * 1;
+    giaTriSo.push(number);
+    document.getElementById('kqThemSo').innerHTML = giaTriSo;
+    document.getElementById('kqThemSo').classList.add('styleKQ');
+
+    // console.log(giaTriSo);
+}
+
+document.getElementById('btnDemSoNguyen').onclick = function () {
+    let count = 0;
+    for (let i = 0; i < giaTriSo.length; i++) {
+        if (Number.isInteger(giaTriSo[i])) {
+            count++;
+        }
+    }
+    document.getElementById('kqDemSoNguyen').innerHTML = `Có ${count} số nguyên`;
+    document.getElementById('kqDemSoNguyen').classList.add('styleKQ');
+}
+
+
+//10. So sánh số lượng Số Âm & Số Dương trong mảng
+document.getElementById('btnSoSanh').onclick = function () {
+    let countPositive = 0; //Biến đếm số dương
+    let countNegative = 0; //Biến đếm số âm
+    for (let i = 0; i < arrNumbers.length; i++) {
+        if (arrNumbers[i] > 0) {
+            countPositive++;
+        } else if (arrNumbers[i] < 0) {
+            countNegative++;
+        }
+    }
+    if (countPositive > countNegative) {
+        document.getElementById('kqSoSanh').innerHTML = `Số dương > Số âm`;
+    } else if (countPositive < countNegative) {
+        document.getElementById('kqSoSanh').innerHTML = `Số dương < Số âm`;
+    } else {
+        document.getElementById('kqSoSanh').innerHTML = `Số dương = Số âm`;
+    }
+    document.getElementById('kqSoSanh').classList.add('styleKQ');
+}
+
 //Tính tổng các số từ 1-->n
 //Hàm tính tổng từ 1->n
-// function sumNumber(number) {
-//     let tong = 0;
-//     if (number <= 100) {
-//         for (let i = 1; i <= number; i++) {
-//             tong += i;
-//         }
-//     } else {
-//         // alert(`Số nhập vào không được lớn hơn 100`);
-//         Swal.fire({
-//             title: 'Thông báo',
-//             text: 'Số nhập vào không được lớn hơn 100',
-//             icon: 'info',
-//             confirmButtonText: 'OK',
-//             allowOutsideClick: false
-//         });
-//         return 0;
-//     }
-//     return tong;
-// }
+function sumNumber(number) {
+    let tong = 0;
+    if (number <= 100) {
+        for (let i = 1; i <= number; i++) {
+            tong += i;
+        }
+    } else {
+        // alert(`Số nhập vào không được lớn hơn 100`);
+        Swal.fire({
+            title: 'Thông báo',
+            text: 'Số nhập vào không được lớn hơn 100',
+            icon: 'info',
+            confirmButtonText: 'OK',
+            allowOutsideClick: false
+        });
+        return 0;
+    }
+    return tong;
+}
 
 // //Gọi nút tính tổng
 // document.getElementById('tongSoDuong').onclick = function () {
@@ -206,37 +251,49 @@ document.getElementById('btnSoNguyenToDauTien').onclick = function () {
 //     document.getElementById('txtKetQua').value = sumNumber(num);
 // }
 
-// //In ra dãy số lẽ & chẵn từ 1->n
-// //Hàm lấy ra dãy số lẻ
-// function tongSoLe(number) {
-//     let tong = "";
-//     if (number <= 100) {
-//         for (let i = 1; i <= number; i++) {
-//             if (i % 2 !== 0) {
-//                 tong += i + ', ';
-//             }
-//         }
-//     } else {
-//         alert(`Số nhập vào không được lớn hơn 100`);
-//         return "";
-//     }
-//     return tong;
-// }
-// //Hàm lấy ra dãy số chẵn
-// function tongSoChan(number) {
-//     let tong = '';
-//     if (number <= 100) {
-//         for (let i = 1; i <= number; i++) {
-//             if (i % 2 === 0) {
-//                 tong += i + ', ';
-//             }
-//         }
-//     } else {
-//         alert(`Số nhập vào không được lớn hơn 100`);
-//         return "";
-//     }
-//     return tong;
-// }
+//In ra dãy số lẽ & chẵn từ 1->n
+//Hàm lấy ra dãy số lẻ
+function demSoLe(number) {
+    let tong = "";
+    if (number <= 100) {
+        for (let i = 1; i <= number; i++) {
+            if (i % 2 !== 0) {
+                tong += i + ', ';
+            }
+        }
+    } else {
+        Swal.fire({
+            title: 'Thông báo',
+            text: 'Số nhập vào không được lớn hơn 100',
+            icon: 'info',
+            confirmButtonText: 'OK',
+            allowOutsideClick: false
+        });
+        return "";
+    }
+    return tong;
+}
+//Hàm lấy ra dãy số chẵn
+function demSoChan(number) {
+    let tong = '';
+    if (number <= 100) {
+        for (let i = 1; i <= number; i++) {
+            if (i % 2 === 0) {
+                tong += i + ', ';
+            }
+        }
+    } else {
+        Swal.fire({
+            title: 'Thông báo',
+            text: 'Số nhập vào không được lớn hơn 100',
+            icon: 'info',
+            confirmButtonText: 'OK',
+            allowOutsideClick: false
+        });
+        return "";
+    }
+    return tong;
+}
 
 // //Gọi nút tính tổng số lẻ
 // // document.getElementById('tongSoLe').onclick = function () {
@@ -306,10 +363,10 @@ document.getElementById('timSoNguyenDuongNhoNhat').onclick = function (q) {
 }
 
 // //6. Tính tổng S(n)
-// //Hàm tính mũ
-// function tinhSoMu(x, y) {
-//     return Math.pow(x, y);
-// }
+//Hàm tính mũ
+function tinhSoMu(x, y) {
+    return Math.pow(x, y);
+}
 
 // document.getElementById('tongSn').onclick = function () {
 //     let tong = 0;
@@ -321,14 +378,14 @@ document.getElementById('timSoNguyenDuongNhoNhat').onclick = function (q) {
 //     document.getElementById('divKQ').innerHTML = tong.toLocaleString();
 // }
 
-// //Hàm tính giai thừa của 1 số
-// function tinhGiaiThua(num) {
-//     let tong = 1;
-//     for (let i = 1; i <= num; i++) {
-//         tong *= i;
-//     }
-//     return tong;
-// }
+//Hàm tính giai thừa của 1 số
+function tinhGiaiThua(number) {
+    let tong = 1;
+    for (let i = 1; i <= number; i++) {
+        tong *= i;
+    }
+    return tong;
+}
 
 // document.getElementById('tongGiaiThua').onclick = function () {
 //     let num = document.getElementById('txtSoGiaiThua').value * 1;
