@@ -1,0 +1,23 @@
+html, body{
+    width: 80%;
+    margin: 20px auto;
+
+    font-size: 20px;
+}
+
+h2{
+    color: deeppink;
+}
+
+input{
+    width: 60px;
+}
+
+#chuoi, #chuoiKQ, #txtKetQua{
+    width: 250px;
+}
+
+.styleKQ{
+    color: mediumblue;
+    font-weight: bold;
+}

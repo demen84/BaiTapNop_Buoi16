@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ôn tập Array</title>
+
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <h2>Bài tập chính - Buổi 16 (Deadline 26/05/2025)</h2>    
+    <hr>
+    <fieldset>
+        <legend>0. Thêm phần tử vảo mảng mảng</legend>
+        <label for="">Nhập vào 1 số</label>
+        <input type="number" id="txtNumber">
+        <button id="themPhanTuVaoMang">Thêm số vào mảng</button>
+        <div id="kqMang"></div>
+    </fieldset> <br><br>
+
+    <fieldset>
+        <legend>1. Tính tổng các số dương trong mảng</legend>        
+        <div id="tongSoDuong"></div>
+        <button id="btnTongSoDuong">Tính tổng số dương</button>
+    </fieldset> <br><br>
+
+    <fieldset>
+        <legend>2. Đếm số dương trong mảng</legend>        
+        <div id="kqDemSoDuong"></div>
+        <button id="btnDemSoDuong">Tính tổng số dương</button>
+    </fieldset> <br><br>
+
+    <fieldset>
+        <legend>3. Tìm số nhỏ nhất & lớn nhất trong mảng</legend>        
+        <div id="kqSoNhoNhat"></div>
+        <div id="kqSoLonNhat"></div>
+        <button id="btnSoNhoNhat">Tìm số nhỏ nhất</button>
+        <button id="btnSoLonNhat">Tìm số lớn nhất</button>
+    </fieldset> <br><br>
+
+    <fieldset>
+        <legend>4. Tìm số dương nhỏ nhất trong mảng</legend>        
+        <div id="kqSoDuongNhoNhat"></div>
+        <div id="kqSoDuongLonNhat"></div>
+        <button id="btnSoDuongNhoNhat">Tìm số dương nhỏ nhất</button>
+        <!-- <button id="btnSoDuongLonNhat">Tìm số lớn nhất</button> -->
+    </fieldset> <br><br>
+
+    <fieldset>
+        <legend>5. Tìm số chẵn cuối cùng trong mảng</legend>        
+        <div id="kqSoChanCuoiCung"></div>
+        <button id="btnSoChanCuoiCung">Tìm số chẵn cuối cùng</button>
+    </fieldset> <br><br>
+
+    <fieldset>
+        <legend>6. Đổi chỗ 2 giá trị trong mảng</legend>    
+        <input type="number" id="txtViTri1">
+        <input type="number" id="txtViTri2">
+        <div id="kqDoiCho"></div>
+        <button id="btnDoiCho">Đổi chỗ</button>
+    </fieldset> <br><br>
+
+    <fieldset>
+        <legend>7. Sắp xếp mảng tăng dần</legend>        
+        <div id="kqSapXepTang"></div>
+        <button id="btnSapXepTang">Sắp xếp tăng dần</button>
+    </fieldset> <br><br>
+
+    <fieldset>
+        <legend>8. Tìm số nguyên tố đầu tiên trong mảng</legend>        
+        <div id="kqSoNguyenToDauTien"></div>
+        <button id="btnSoNguyenToDauTien">Tìm số nguyên tố đầu tiên</button>
+    </fieldset> <br><br>
+
+    <fieldset>
+        <legend>9. Đếm số nguyên trong mảng</legend>        
+        <label for="">Nhập vào 1 số</label>
+        <input type="number" id="nhapSo">
+        <button id="themSo">Thêm số</button>
+        <div id="kqThemSo"></div>
+        <button id="btnDemSoNguyen">Tìm số nguyên tố đầu tiên</button>
+    </fieldset> <br><br>
+
+    <fieldset>
+        <legend>10. So sánh số lượng Số Âm & Số Dương trong mảng</legend>        
+        <div id="kqSoSanh"></div>
+        <button id="btnSoSanh">So Sánh</button>
+    </fieldset> <br><br>
+
+    <br><br>
+    <!-- <form action="">
+        <caption>5. Tìm số nguyên dương nhỏ nhất:</caption> <br> <br>
+        <label for="">Nhập vào số mục tiêu</label>
+        <input type="number" id="targetNumber">
+        <button id="timSoNguyenDuongNhoNhat">Tìm số nguyên dương nhỏ nhất</button> <br> <br>
+        <label for="">Kết quả</label>
+        <input type="number" id="txtKQ">
+    </form>
+
+    <br><br>
+
+    <fieldset>
+        <legend>6. Nhập 2 số x & n. Tính tổng S(n) = x + x^2 + x^3 + x^4 + ... + x^n (Sử dụng Hàm & vòng lặp)</legend>
+        <label for="">Nhập vào số x</label>
+        <input type="number" id="x">
+        <label for="">Nhập vào số n</label>
+        <input type="number" id="n">
+        <button id="tongSn">Tính tổng S(n)</button>
+        <div id="divKQ"></div>
+    </fieldset> <br><br>
+
+    <fieldset>
+        <legend>7. Tính giai thừa của 1 số</legend>
+        <label for="">Nhập vào 1 số</label>
+        <input type="number" id="txtSoGiaiThua">
+        
+        <button id="tongGiaiThua">Tính tổng giai thừa</button>
+        <div id="kqGiaiThua"></div>
+    </fieldset> <br><br>
+
+    <fieldset>
+        <legend>8. In ra dãy số từ 1->n</legend>
+        <label for="">Nhập vào 1 số</label>
+        <input type="number" id="txtN">
+        
+        <button id="inDaySo">In ra dãy số</button>
+        <div id="kqDaySo"></div>
+    </fieldset> -->
+
+
+
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <script src="./js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>
