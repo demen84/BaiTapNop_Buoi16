@@ -1,4 +1,9 @@
 //0. Thêm phần tử số vào mảng
+/*
+- Đầu vào: Khai báo mảng toàn cục arrNumbers[] để nhận các giá trị số mà người dùng nhập vào.
+- Xử lý: add số của người dùng xử lý push() vào mảng arrNumbers.
+- Đầu ra: Xuất ra màn hình các giá trị (phần tử) trong mảng.
+*/
 let arrNumbers = [];
 document.getElementById('themPhanTuVaoMang').onclick = function () {
     let number = document.getElementById('txtNumber').value * 1;
@@ -6,10 +11,15 @@ document.getElementById('themPhanTuVaoMang').onclick = function () {
     document.getElementById('kqMang').innerHTML = arrNumbers;
     document.getElementById('kqMang').classList.add('styleKQ');
 
-    // console.log(arrNumbers);
+    // console.log(arrNumbers);//Kiểm tra giá trị mảng ở giao diện console log.
 }
 
 //1. Tính tổng các số dương trong mảng arrNumbers
+/*
+- Đầu vào: mảng giá trị arrNumbers[]
+- Xử lý: Duyệt qua từng phần tử trong mảng, nếu phần tử đó là số dương thì cộng dồn giá trị của phần tử đó vào biến tổng
+- Đầu ra: Xuất ra màn hình tổng cộng các số dương trong mảng.
+*/
 document.getElementById('btnTongSoDuong').onclick = function () {
     let tong = 0;
     for (let i = 0; i < arrNumbers.length; i++) {
@@ -22,6 +32,11 @@ document.getElementById('btnTongSoDuong').onclick = function () {
 }
 
 //2. Đếm số dương trong mảng
+/*
+- Đầu vào: mảng giá trị arrNumbers[]
+- Xử lý: Duyệt qua từng phần tử trong mảng, nếu phần tử đó là số dương thì tăng biến đếm lên 1
+- Đầu ra: Xuất ra màn hình số lượng số dương trong mảng.
+*/
 document.getElementById('btnDemSoDuong').onclick = function () {
     let dem = 0;
     for (let i = 0; i < arrNumbers.length; i++) {
@@ -35,6 +50,11 @@ document.getElementById('btnDemSoDuong').onclick = function () {
 }
 
 //3.1 Tìm số nhỏ nhất trong mảng
+/*
+- Đầu vào: mảng giá trị arrNumbers[]
+- Xử lý: Dùng Math.min(...mảng) để tìm số nhỏ nhất. Or dùng sort() để sắp xếp mảng tăng dần, số nhỏ nhất là phần tử đầu tiên, nếu sắp xếp giảm dần thì số nhỏ nhất là phần tử cuối cùng.
+- Đầu ra: Xuất ra màn hình số nhỏ nhất
+*/
 document.getElementById('btnSoNhoNhat').onclick = function () {
     //C1:
     // let min = arrNumbers[0];
@@ -60,6 +80,11 @@ document.getElementById('btnSoNhoNhat').onclick = function () {
     }
 }
 //3.2 Tìm số lớn nhất trong mảng
+/*
+- Đầu vào: mảng giá trị arrNumbers[]
+- Xử lý: Dùng Math.max(...mảng) để tìm số lớn nhất. Or dùng sort() để sắp xếp mảng tăng dần, số lớn nhất là phần tử cuối cùng, nếu sắp xếp giảm dần thì số lớn nhất là phần tử đầu tiên.
+- Đầu ra: Xuất ra màn hình số lớn nhất.
+*/
 document.getElementById('btnSoLonNhat').onclick = function () {
     //C1:
     // let max = arrNumbers[0];
@@ -100,6 +125,11 @@ document.getElementById('btnSoDuongNhoNhat').onclick = function () {
 
 
 //5. Tìm số chẵn cuối cùng trong mảng arrNumbers:
+/*
+- Đầu vào: mảng giá trị arrNumbers[]
+- Xử lý: Tìm số chẵn cuối cùng trong mảng: duyệt qua từng phần tử trong mảng từ cuối lên đầu mảng, nếu tìm thấy số chẵn (số chia hết cho 2) thì dừng vòng lặp
+- Đầu ra: Xuất giá trị có số chẵn ra màn hình
+*/
 document.getElementById('btnSoChanCuoiCung').onclick = function () {
     let lastNumber = -1;//gán = -1 để khi không có số chẵn nào thì vẫn in ra -1
     for (let i = arrNumbers.length - 1; i >= 0; i--) {
@@ -118,6 +148,11 @@ document.getElementById('btnSoChanCuoiCung').onclick = function () {
 }
 
 //6. Đổi chỗ 2 giá trị trong mảng
+/*
+- Đầu vào: mảng giá trị arrNumbers[]
+- Xử lý: DOM tới 2 vị trí mà người dùng nhập vào, thực hiện hoán đổi giá trị 2 vị trí trong mảng
+- Đầu ra: Xuất ra màn hình giá trị mảng mới sau khi hoán đổi
+*/
 document.getElementById('btnDoiCho').onclick = function () {
     let vitri1 = document.getElementById('txtViTri1').value * 1;
     let vitri2 = document.getElementById('txtViTri2').value * 1;
@@ -131,18 +166,23 @@ document.getElementById('btnDoiCho').onclick = function () {
 
 
 //7. Sắp xếp mảng tăng dần
+/*
+- Đầu vào: mảng giá trị arrNumbers[]
+- Xử lý: Dùng phương thức sort() của mảng (arrNumbers.sort(function(){})) để sắp xếp mảng tăng/giảm dần
+- Đầu ra: Xuất ra màn hình giá trị mảng sau khi sắp xếp tăng dần
+*/
 document.getElementById('btnSapXepTang').onclick = function () {
-    //C1: dùng vòng lặp thep phương pháp selection sort
+    //C1: dùng vòng lặp theo phương pháp Selection Sort
     // for (let i = 0; i < arrNumbers.length - 1; i++) {
     //     for (let j = i + 1; j < arrNumbers.length; j++) {
     //         if (arrNumbers[i] > arrNumbers[j]) {
-    //             [arrNumbers[i], arrNumbers[j]] = [arrNumbers[j], arrNumbers[i]];
+    //             [arrNumbers[i], arrNumbers[j]] = [arrNumbers[j], arrNumbers[i]];//Hoán đổi vị trí phần tử của i & j
     //         }
     //     }
     // }
 
     //C2: dùng phương thức sort() của array
-    arrNumbers.sort((a, b) => a - b);
+    arrNumbers.sort((q, t) => q - t);
 
     document.getElementById('kqSapXepTang').innerHTML = `Mảng sau khi sắp xếp: ${arrNumbers}`;
     document.getElementById('kqSapXepTang').classList.add('styleKQ');
@@ -150,17 +190,23 @@ document.getElementById('btnSapXepTang').onclick = function () {
 
 
 //8. Tìm số nguyên tố đầu tiên trong mnảng
+/*
+- Đầu vào: mảng giá trị arrNumbers[]
+- Xử lý: Duyệt từng phần tử số trong mảng arrNumbers, nếu phần tử thứ i là số nguyên tố trả về kết quả, dừng lại vòng lặp (break)
+- Đầu ra: Xuất ra màn hình giá trị số nguyên tố đầu tiên trong màng là số x (arrNumber[i])
+*/
 //Hàm kiểm tra số nguyên tố
 function isPrime(number) {
+    let soNguyenTo = true;//Or không cần khai báo biến này vì trả về true/false luôn
     if (number < 2) {
-        return false;
+        soNguyenTo = false;//Or return false;
     }
     for (let i = 2; i <= Math.sqrt(number); i++) {
         if (number % i === 0) {
-            return false;
+            soNguyenTo = false;//Or return false;
         }
     }
-    return true;
+    return soNguyenTo;//Or return true;
 }
 document.getElementById('btnSoNguyenToDauTien').onclick = function () {
     let firstPrime = -1;
@@ -179,17 +225,25 @@ document.getElementById('btnSoNguyenToDauTien').onclick = function () {
 }
 
 //9. Đếm số nguyên trong mảng
+/*
+- Đầu vào: Nhập vào 1 số => add vào màng giaTriSo[];
+- Xử lý: Duyệt từng phần tử số trong mảng giaTriSo[], nếu phần tử thứ i là số nguyên (Number.isInteger()) thì tăng biến đếm lên 1 đơn vị
+- Đầu ra: Hiển thị ra màn hình số lượng số nguyên trong mảng
+*/
 
+//Khai báo mảng giaTriSo để lưu trữ các số nhập vào
 let giaTriSo = [];
 document.getElementById('themSo').onclick = function () {
     let number = document.getElementById('nhapSo').value * 1;
+    //add số number vào mảng giaTriSo[]
     giaTriSo.push(number);
+    //Xuất kết quả mảng số ra màn hình
     document.getElementById('kqThemSo').innerHTML = giaTriSo;
     document.getElementById('kqThemSo').classList.add('styleKQ');
-
     // console.log(giaTriSo);
 }
 
+//Xử lý đếm số nguyên trong mảng
 document.getElementById('btnDemSoNguyen').onclick = function () {
     let count = 0;
     for (let i = 0; i < giaTriSo.length; i++) {
@@ -197,31 +251,42 @@ document.getElementById('btnDemSoNguyen').onclick = function () {
             count++;
         }
     }
+    //Xuất kết quả ra màn hình
     document.getElementById('kqDemSoNguyen').innerHTML = `Có ${count} số nguyên`;
     document.getElementById('kqDemSoNguyen').classList.add('styleKQ');
 }
 
 
 //10. So sánh số lượng Số Âm & Số Dương trong mảng
+/*
+- Đầu vào: Mảng số nguyên arrrNumbers[] ở trên
+- Xử lý: Duyệt từng phần tử số trong mảng, nếu số nào âm (<0) thì tăng biến đếm số âm lên 1 đơn vị, ngược lại (>0) thì tăng biến đếm số dương lên 1 đơn vị.
+- Đầu ra: Xuất ra màn hình kết quả So sánh số lượng Số Âm & Số Dương trong mảng. Vd: Số dương > Số âm; Số Âm > Số Dương; Số Âm = Số Dương.
+*/
 document.getElementById('btnSoSanh').onclick = function () {
-    let countPositive = 0; //Biến đếm số dương
-    let countNegative = 0; //Biến đếm số âm
+    let demSoDuong = 0; //Biến đếm số dương (Positive)
+    let demSoAm = 0; //Biến đếm số âm ((Negative)
+    //Xử lý đếm số dương và số âm
     for (let i = 0; i < arrNumbers.length; i++) {
         if (arrNumbers[i] > 0) {
-            countPositive++;
+            demSoDuong++;
         } else if (arrNumbers[i] < 0) {
-            countNegative++;
+            demSoAm++;
         }
     }
-    if (countPositive > countNegative) {
+    //Xử lý in kết quả ra màn hình
+    if (demSoDuong > demSoAm) {
         document.getElementById('kqSoSanh').innerHTML = `Số dương > Số âm`;
-    } else if (countPositive < countNegative) {
+    } else if (demSoDuong < demSoAm) {
         document.getElementById('kqSoSanh').innerHTML = `Số dương < Số âm`;
     } else {
         document.getElementById('kqSoSanh').innerHTML = `Số dương = Số âm`;
     }
     document.getElementById('kqSoSanh').classList.add('styleKQ');
 }
+
+
+/* ======================================^A^==================================== */
 
 //Tính tổng các số từ 1-->n
 //Hàm tính tổng từ 1->n
@@ -355,12 +420,12 @@ function findSmallestN(targetNumber) {
 
 // console.log(findSmallestN(10));
 
-document.getElementById('timSoNguyenDuongNhoNhat').onclick = function (q) {
-    q.preventDefault();
-    let targetNumber = document.getElementById('targetNumber').value * 1;
-    let soN = findSmallestN(targetNumber);
-    document.getElementById('txtKQ').value = soN;
-}
+// document.getElementById('timSoNguyenDuongNhoNhat').onclick = function (q) {
+//     q.preventDefault();
+//     let targetNumber = document.getElementById('targetNumber').value * 1;
+//     let soN = findSmallestN(targetNumber);
+//     document.getElementById('txtKQ').value = soN;
+// }
 
 // //6. Tính tổng S(n)
 //Hàm tính mũ
@@ -406,4 +471,34 @@ function tinhGiaiThua(number) {
 //     // document.getElementById('kqDaySo').innerHTML = kq;
 // }
 
+//Hàm tìm số lớn nhất và nhỏ nhất trong mảng
+function findHighestAndLowest(array) {
+    if (!Array.isArray(array) || array.length === 0) {
+        return null;
+    }
 
+    let min = array[0], max = array[0];
+    let minIndex = 0, maxIndex = 0;
+
+    for (let i = 1; i < array.length; i++) {
+        if (array[i] < min) {
+            min = array[i];
+            minIndex = i;
+        }
+        if (array[i] > max) {
+            max = array[i];
+            maxIndex = i;
+        }
+    }
+
+    return {
+        highest: {
+            value: max,
+            index: maxIndex
+        },
+        lowest: {
+            value: min,
+            index: minIndex
+        }
+    };
+}
